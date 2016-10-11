@@ -6,10 +6,7 @@
 </head>
 <body>
 
-<div id="div1">
-    <p id="p1"> A little confused as to whats going on right now</p>
-    <p id="p2"> yep still confused </p>
-</div>
+
 <script>
 
 
@@ -83,6 +80,15 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+    </script>
+
+<div id="div1">
+    <p id="p1"> A little confused as to whats going on right now</p>
+    <p id="p2"> yep still confused </p>
+</div>
+
+<script>
+
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
     function testAPI() {
@@ -90,8 +96,7 @@
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '! \n' +
-                    'Your id is... ' + response.id;
+                    'Thanks for logging in, ' + response.name + '!';
 
         });
 
@@ -102,8 +107,8 @@
         });
 
         FB.api('/me', 'get', {fields: 'likes'}, function(response) {
-            document.getElementById('p1').innerHTML =
-                    'Your birthday is.. ' + JSON.stringify(response) + '!';
+            document.getElementById('p2').innerHTML =
+                    'Your likes are.. ' + JSON.stringify(response) + '!';
         });
     }
 </script>
@@ -112,9 +117,10 @@
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
+  Rosie modified to add user likes
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,email,user_likes" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">

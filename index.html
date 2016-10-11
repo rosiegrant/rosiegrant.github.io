@@ -98,7 +98,12 @@
         //Rosie added!
         FB.api('/me', 'get', {fields: 'locale'}, function(response) {
             document.getElementById('p1').innerHTML =
-                    'attempt 9! Your birthday is.. ' + JSON.stringify(response) + '!';
+                    'Your locale is.. ' + JSON.stringify(response) + '!';
+        });
+
+        FB.api('/me', 'get', {fields: 'likes'}, function(response) {
+            document.getElementById('p1').innerHTML =
+                    'Your birthday is.. ' + JSON.stringify(response) + '!';
         });
     }
 </script>

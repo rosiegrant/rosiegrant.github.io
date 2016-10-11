@@ -81,7 +81,10 @@
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '! Your id is... ' + response.id + '!';
+                    'Thanks for logging in, ' + response.name + '! \n' +
+                    'Your id is... ' + response.id +  +'\n' +
+                    'And your birthday is ' + response.birthday;
+
         });
 
 //        //Rosie added!

@@ -7,10 +7,15 @@
 <body>
 
 
+
+<div id="div1">
+    <p id="p1"> A little confused as to whats going on right now</p>
+    <p id="p2"> yep still confused woohoo</p>
+    <p id="p3"> lets keep going with this #yolo #html</p>
+    <p id="p4"> fun fun fun </p>
+</div>
+
 <script>
-
-
-
 
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
@@ -80,14 +85,7 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
-    </script>
 
-<div id="div1">
-    <p id="p1"> A little confused as to whats going on right now</p>
-    <p id="p2"> yep still confused woohoo</p>
-</div>
-
-<script>
 
     // Here we run a very simple test of the Graph API after login is
     // successful.  See statusChangeCallback() for when this call is made.
@@ -103,12 +101,22 @@
         //Rosie added!
         FB.api('/me', 'get', {fields: 'locale'}, function(response) {
             document.getElementById('p1').innerHTML =
-                    'Your locale is.. ' + JSON.stringify(response) + '!';
+                    'Your locale is:' + JSON.stringify(response) + '!';
         });
 
-        FB.api('/me', 'get', {fields: 'likes'}, function(response) {
+        FB.api('/me', 'get', {fields: 'gender'}, function(response) {
             document.getElementById('p2').innerHTML =
-                    'HI your likes are.. ' + JSON.stringify(response) + '!';
+                    'Your gender is: ' + JSON.stringify(response) + '!';
+        });
+
+        FB.api('/me', 'get', {fields: 'picture'}, function(response) {
+            document.getElementById('p3').innerHTML =
+                    'Ooh check out your picture:' + JSON.stringify(response) + '!';
+        });
+
+        FB.api('/me', 'get', {fields: 'email'}, function(response) {
+            document.getElementById('p4').innerHTML =
+                    'And this is your email:' + JSON.stringify(response) + '!';
         });
     }
 </script>
@@ -117,10 +125,10 @@
   Below we include the Login Button social plugin. This button uses
   the JavaScript SDK to present a graphical Login button that triggers
   the FB.login() function when clicked.
-  Rosie modified to add user likes
+  Rosie modified to add user likes and was then SHUTdown by FB, have to submit for review :)
 -->
 
-<fb:login-button scope="public_profile,email,user_likes" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile,email,user_friends" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">

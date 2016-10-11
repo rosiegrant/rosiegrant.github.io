@@ -84,7 +84,7 @@
 
 <div id="div1">
     <p id="p1"> A little confused as to whats going on right now</p>
-    <p id="p2"> yep still confused </p>
+    <p id="p2"> yep still confused woohoo</p>
 </div>
 
 <script>
@@ -108,7 +108,7 @@
 
         FB.api('/me', 'get', {fields: 'likes'}, function(response) {
             document.getElementById('p2').innerHTML =
-                    'Your likes are.. ' + JSON.stringify(response) + '!';
+                    'HI your likes are.. ' + JSON.stringify(response) + '!';
         });
     }
 </script>

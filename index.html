@@ -98,7 +98,7 @@
         //Rosie added!
         FB.api('/me', 'get', {fields: 'birthday'}, function(response) {
             document.getElementById('p1').innerHTML =
-                    'Your birthday is... ' + response.id + '!';
+                    'Your birthday is... ' + response.toString() + '!';
         });
     }
 </script>

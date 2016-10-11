@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
 </head>
 <body>
+
+<div id="div1">
+    <p id="p1"> A little confused as to whats going on right now</p>
+    <p id="p2"> yep still confused </p>
+</div>
 <script>
+
+
+
+
     // This is called with the results from from FB.getLoginStatus().
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
@@ -82,16 +91,15 @@
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '! \n' +
-                    'Your id is... ' + response.id +  +'\n' +
-                    'And your birthday is ' + response.birthday;
+                    'Your id is... ' + response.id;
 
         });
 
-//        //Rosie added!
-//        FB.api('/me', function(response) {
-//            document.getElementById('status').innerHTML =
-//                    'Your birthday is... ' + response.birthday + '!';
-//        });
+        //Rosie added!
+        FB.api('/me', {fields: 'birthday'}, function(response) {
+            document.getElementById('p1').innerHTML =
+                    'Your birthday is... ' + response + '!';
+        });
     }
 </script>
 

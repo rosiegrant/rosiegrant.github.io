@@ -96,7 +96,7 @@
         });
 
         //Rosie added!
-        FB.api('/me', 'get', {fields: 'last_name', 'locale'}, function(response) {
+        FB.api('/me', 'get', {fields: 'locale'}, function(response) {
             document.getElementById('p1').innerHTML =
                     'attempt 9! Your birthday is.. ' + JSON.stringify(response) + '!';
         });

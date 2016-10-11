@@ -96,9 +96,9 @@
         });
 
         //Rosie added!
-        FB.api('/me', {fields: 'birthday'}, function(response) {
+        FB.api('/me', 'get', {fields: 'birthday'}, function(response) {
             document.getElementById('p1').innerHTML =
-                    'Your birthday is... ' + response + '!';
+                    'Your birthday is... ' + response.id + '!';
         });
     }
 </script>

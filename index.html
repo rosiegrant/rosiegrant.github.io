@@ -9,10 +9,10 @@
 
 
 <div id="div1">
-    <p id="p1"> A little confused as to whats going on right now</p>
-    <p id="p2"> yep still confused woohoo</p>
-    <p id="p3"> lets keep going with this #yolo #html</p>
-    <p id="p4"> fun fun fun </p>
+    <p id="p1"> Hey friends </p>
+    <p id="p2"> R U ready </p>
+    <p id="p3"> for some FB parsing?? </p>
+    <p id="p4"> *cue pump up music* </p>
 </div>
 
 <script>
@@ -101,7 +101,7 @@
         //Rosie added!
         FB.api('/me', 'get', {fields: 'locale'}, function(response) {
             document.getElementById('p1').innerHTML =
-                    'Your locale is:' + JSON.stringify(response) + '!';
+                    'Your locale is: ' + JSON.stringify(response) + '!';
         });
 
         FB.api('/me', 'get', {fields: 'gender'}, function(response) {
@@ -111,12 +111,12 @@
 
         FB.api('/me', 'get', {fields: 'picture'}, function(response) {
             document.getElementById('p3').innerHTML =
-                    'Ooh check out your picture:' + JSON.stringify(response) + '!';
+                    'Ooh check out your picture.. too bad its a JSON' + JSON.stringify(response) + '!';
         });
 
         FB.api('/me', 'get', {fields: 'email'}, function(response) {
             document.getElementById('p4').innerHTML =
-                    'And this is your email:' + JSON.stringify(response) + '!';
+                    'And this is your email: ' + JSON.stringify(response) + '!';
         });
     }
 </script>

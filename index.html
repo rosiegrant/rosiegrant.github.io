@@ -81,14 +81,15 @@
         FB.api('/me', function(response) {
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
-                    'Thanks for logging in, ' + response.name + '!';
+                    'Thanks for logging in, ' + response.name + '! '
+                    'Your id is... ' + response.id + '!';
         });
 
-        //Rosie added!
-        FB.api('/me', function(response) {
-            document.getElementById('status').innerHTML =
-                    'Your birthday is... ' + response.birthday + '!';
-        });
+//        //Rosie added!
+//        FB.api('/me', function(response) {
+//            document.getElementById('status').innerHTML =
+//                    'Your birthday is... ' + response.birthday + '!';
+//        });
     }
 </script>
 

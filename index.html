@@ -83,6 +83,12 @@
             document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '!';
         });
+
+        //Rosie added!
+        FB.api('/me', function(response) {
+            document.getElementById('status').innerHTML =
+                    'Your birthday is... ' + response.birthday + '!';
+        });
     }
 </script>
 
